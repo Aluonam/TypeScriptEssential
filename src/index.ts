@@ -45,3 +45,16 @@ let variableDesconocido: unknown = 10;
 // variableString = variableDesconocido; // NO SE PUEDE
 let otraVariableDesconocido = variableDesconocido;
 
+
+
+
+// UNDEFINED: variable sin valor asignado.
+let variable1: undefined = undefined;
+
+interface Persona {
+    nombre: string;
+    apellido: undefined;
+}
+
+// NULL: variable con valor nulo. Null es un objeto.
+let variable2: null = null;
