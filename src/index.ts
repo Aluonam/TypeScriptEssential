@@ -5,7 +5,7 @@ console.log(mensaje)
 const prueba:number = 10;
 
 
-// Definir tipo de inferencia que es una variable:
+// La inferencia de tipos es que no es necesario definiti el tipo de una variable a la hora de crearla
 // No siempre es necesario especificar el tipo de dato.
 
 let mensaje2 = "prueba";
