@@ -11,10 +11,17 @@ const prueba:number = 10;
 let mensaje2 = "prueba";
 const  numero = 100;
 
-interface Persona{
+
+//DEFINIR ARRAY: 
+// 1.
+interface Persona1{
     nombre: string
 }
-const arregloPersonas: Array<Persona> = [{nombre: 'Pablo'}, {nombre: 'Pedro'}];
+const arrayString1: Array<Persona1> = [{nombre: 'Pablo'}, {nombre: 'Pedro'}];
+// 2.
+const arrayString2: Array<string> = ['a', 'b', 'c']
+// 3.
+const arrayString3: string[] = ['a', 'b', 'c']
 
 
 // Definir la firma de la función:
@@ -51,9 +58,9 @@ let otraVariableDesconocido = variableDesconocido;
 // UNDEFINED: variable sin valor asignado.
 let variable1: undefined = undefined;
 
-interface Persona {
-    nombre: string;
-    apellido: undefined;
+interface Persona2 {
+    nombre2: string;
+    apellido2: undefined;
 }
 
 // NULL: variable con valor nulo. Null es un objeto.
