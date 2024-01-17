@@ -28,3 +28,20 @@ const filtro = (valor: string): boolean =>{
 }
 
 const animales: string[] = ['perro', 'gato', 'pez'];
+
+
+// Las variables pueden reasignarse: con ANY (el efecto es como usar solo JS asi que no es recomndable ysarlo porque pierde la funcionalidad de TS)
+let cualquierValor : any = 'un valor string';
+
+cualquierValor = 10;
+cualquierValor = true;
+cualquierValor = {};
+
+
+// UNKNOWN no se reasigna. Se usa cuando tengo un parámetro que no sé que dato va a obtener pero dentro de la misma función usaré operadores para usar el tipo.
+// unknown es más seguro
+let variableDesconocido: unknown = 10;
+
+// variableString = variableDesconocido; // NO SE PUEDE
+let otraVariableDesconocido = variableDesconocido;
+
