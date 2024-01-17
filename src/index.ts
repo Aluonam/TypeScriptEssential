@@ -58,3 +58,19 @@ interface Persona {
 
 // NULL: variable con valor nulo. Null es un objeto.
 let variable2: null = null;
+
+
+// NEVER: el valor nunca sucede.
+// por ejemplo: lanzar un error: 
+function lanzarError(mensajeError: string): never {
+    throw new Error(mensajeError);
+}
+let saludo = saludar("¡hola!");
+
+// VOID: la funcion no retorna ningun valor
+function saludar(mensaje:string ):void{
+    console.log(mensaje);
+}
+
+let error = lanzarError("Ha sucedido un error")
+
