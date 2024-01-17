@@ -15,3 +15,16 @@ interface Persona{
     nombre: string
 }
 const arregloPersonas: Array<Persona> = [{nombre: 'Pablo'}, {nombre: 'Pedro'}];
+
+
+// Definir la firma de la función:
+
+function calculo( x: number, y: number ): number{
+    return x * y;
+}
+
+const filtro = (valor: string): boolean =>{
+    return valor.length >= 5;
+}
+
+const animales: string[] = ['perro', 'gato', 'pez'];
