@@ -8,7 +8,7 @@ type Hamster = 'hamster';
 
 type Mascota = Perro | Gato | PezBeta | Hamster;
 let mascota: Mascota = 'perro';
-mascota = 'pájaro';
+// mascota = 'pájaro';
 
 type ListaNombreAnimales = Array<string>;
 const nombres: ListaNombreAnimales = ['Laika', 'Smoky', 'Bobby', 'Beethoven', 'Lassie', 'Marley'];
