@@ -18,3 +18,12 @@ type Localizacion = {
 }
 
 let coordenadas : Punto | Localizacion;
+
+// También se pueden unir funciones
+
+function printAge( age: number | string): void {
+    console.log(`Tienes ${age} años`)
+}
+
+printAge(50);
+printAge('cincuenta');
