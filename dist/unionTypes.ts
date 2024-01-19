@@ -27,3 +27,12 @@ function printAge( age: number | string): void {
 
 printAge(50);
 printAge('cincuenta');
+
+// union de funciones es útil cuando quiero manejar lo que devuelve
+function calcularTasas( price: number | string, tax: number){
+    if(typeof price === 'string'){
+        price = parseFloat(price.replace('$', ''))
+    } else {
+        price * tax
+    }
+}
