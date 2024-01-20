@@ -36,3 +36,10 @@ function calcularTasas( price: number | string, tax: number){
         price * tax
     }
 }
+
+// unión de tipos en arrays
+// mejor usar varios tipos que any 
+const varios : any[] = [1,2,3,'hola', true]
+
+const numberANDString: (number | string)[] = [1,2,3, 'hola'] // admite NUMEROS y STRING
+const numberOrString: number[] | string[] = [1,2,3,] // admite numeros O string
