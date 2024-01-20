@@ -4,7 +4,8 @@
 let age: number | string = 25; // admite número o string
 age = 30;
 age = 'veinticinco';
-
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
 // También se pueden unir tipos de objetos
 
 type Punto = {
@@ -18,7 +19,8 @@ type Localizacion = {
 }
 
 let coordenadas : Punto | Localizacion;
-
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
 // También se pueden unir funciones
 
 function printAge( age: number | string): void {
@@ -43,3 +45,27 @@ const varios : any[] = [1,2,3,'hola', true]
 
 const numberANDString: (number | string)[] = [1,2,3, 'hola'] // admite NUMEROS y STRING
 const numberOrString: number[] | string[] = [1,2,3,] // admite numeros O string
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
+// LITERAL TYPES
+// permite manejar las respuestas exactas
+
+const giveAnswer = (answer: 'yes' | 'no' | 'maybe')=>{
+    return `The answer is ${answer}`
+}
+giveAnswer('no') // está OK
+// giveAnswer('pepito') // No sirve como respuesta
+
+
+type DayOfWeek =
+    | 'Monday'
+    | 'Tuesday'
+    | 'Wednesday'
+    | 'Thursday'
+    | 'Friday'
+    | 'Saturday'
+    | 'Sunday'
+
+let today: DayOfWeek = 'Sunday'
+//--------------------------------------------------------------------------
+//--------------------------------------------------------------------------
