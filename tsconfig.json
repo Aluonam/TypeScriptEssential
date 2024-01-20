@@ -6,7 +6,15 @@
       "strict": true,
       "outDir": "./dist",
       "rootDir": "./src",
-      "removeComments": true
+      "removeComments": true,    /*que los comentarios no se compilen*/
+      "alwaysStrict": true, 
+
+      // Verificaciones adicionales
+      "noUnusedLocals": true,            /*Reporta errores en variables no utilizadas*/
+      "noUnusedParameters": true,        /*Reporta errores en parámetros no utilizados*/
+      "noImplicitReturns": true,         /*Reporta errores debidos a dirección dell código que no devuelve un valor*/
+      "noFallthroughCasesInSwitch": true /*Reporta en controles switch cuando un case sin break genera errores*/
+
     },
     "include": [
         "src/**/*"
