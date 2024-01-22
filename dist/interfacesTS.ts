@@ -96,3 +96,24 @@ const Acrux: Dog = { // Dog será el total de los datos, no podemos poner solo u
         return 'GUAU GUAU!'
     }
 }
+
+
+// EXTENDING INTERFACES
+// Interfaz que extiende de interfaz : añade las funcionalidades de la interfaz original" la que va después del extend
+// interface InterfazQueAñadeFuncionalidad extends InterfazOriginal {}
+
+interface ServiceDog extends Dog {
+    job: 'drug-sniffing' | 'bomb-sniffing' | 'guide dog'
+}
+
+const bobi: ServiceDog = {
+    name: 'Bobi',
+    age: 3,
+    breed: 'galgo',
+    bark(){
+        return 'bark!'
+    },
+    job: 'bomb-sniffing'
+}
+
+
