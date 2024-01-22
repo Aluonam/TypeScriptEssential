@@ -1,4 +1,7 @@
-
+// INTERFACE
+// Describe la forma de los objetos y solo de los objetos
+// son muy parecidas a los alias tipo
+ 
 interface Huesped {
     idHuesped: string,
     nombre: string,
@@ -8,12 +11,12 @@ interface Huesped {
     telefono?: string
 }
 
-type Piso = 'primer piso' | 'segundo piso';
+type PisoOption = 'primer piso' | 'segundo piso';
 
 interface Cuarto {
     id: number,
     tipo: 'individual' | 'doble' | 'triple',
-    piso: Piso,
+    piso: PisoOption,
     precioNoche: number
 }
 
@@ -51,3 +54,97 @@ const reservacion: Reservacion = {
     },
     nochesReservadas: 3
 }
+
+// Definir métodos en las interfaces:
+interface Product {
+    name: string;
+    price: number;
+    applyDiscount( discount: number ): number; // Especifica que recibe y devuelve el método
+}
+
+const shoes: Product = {
+    name: 'blue boots',
+    price: 50,
+    applyDiscount( amount: number ){
+        // return 5
+        const newPrice = this.price * (1 - amount);
+        this.price = newPrice;
+        return this.price;
+    },
+
+}
+console.log(shoes.applyDiscount(0.5))
+
+
+// Ejemplo Interfaz con método: y para comprender diferencia entre TYPE e INTERFAZ
+// los types se reescriben, no se añaden como sí hacen las interfaces
+interface Dog {
+    name: string;
+    age: number;
+}
+
+interface Dog {  // Añades datos a la interfaz. INTERFAZ = AÑADE (extiende)
+    breed: string;
+    bark(): string; 
+}
+
+const Acrux: Dog = { // Dog será el total de los datos, no podemos poner solo unos pocos de todos los definidos
+    name: 'Acrux',
+    age: 7,
+    breed: 'mestizo',
+    bark(){      // como es un método debe darse el valor como un método
+        return 'GUAU GUAU!'
+    }
+}
+
+
+// EXTENDING INTERFACES
+// Interfaz que extiende de interfaz : añade las funcionalidades de la interfaz original" la que va después del extend
+// interface InterfazQueAñadeFuncionalidad extends InterfazOriginal {}
+
+interface ServiceDog extends Dog {
+    job: 'drug-sniffing' | 'bomb-sniffing' | 'guide dog'
+}
+
+const bobi: ServiceDog = {
+    name: 'Bobi',
+    age: 3,
+    breed: 'galgo',
+    bark(){
+        return 'bark!'
+    },
+    job: 'bomb-sniffing'
+}
+
+// INTERFACE MULTIPLE INHERITANCE
+// Herencia múltiple en interfaces
+
+interface Person2 {
+    name: string
+}
+
+interface Employee {
+    readonly id: number,
+    email: string
+}
+
+interface Engineer extends Person2, Employee{
+    level: string,
+    languages: string[]
+}
+
+const william: Engineer = {
+    name: 'William',
+    id: 28384340,
+    email: 'willi@gmail.com',
+    level: 'senior',
+    languages: ['JavaScript', 'TypeScript', 'React'],
+}
+
+
+// DIFERENCIAS TYPE vs INTERFACE:
+/*
+1. INTERFACE solo permite definir objetos y no tipos literales (no permite color = 'blue' | 'white' eso lo permiten los type)
+2. INTERFACE se puede reabrir y añadir contenido. TYPE una vez se ha creado lo asume como un duplicado y da error.
+3. INTERFAC3E puede extender interface. De forma que añade contenido y permite herencia múltiple. TYPE para unir contenido usa ampersand &
+*/
