@@ -140,3 +140,11 @@ const william: Engineer = {
     level: 'senior',
     languages: ['JavaScript', 'TypeScript', 'React'],
 }
+
+
+// DIFERENCIAS TYPE vs INTERFACE:
+/*
+1. INTERFACE solo permite definir objetos y no tipos literales (no permite color = 'blue' | 'white' eso lo permiten los type)
+2. INTERFACE se puede reabrir y añadir contenido. TYPE una vez se ha creado lo asume como un duplicado y da error.
+3. INTERFAC3E puede extender interface. De forma que añade contenido y permite herencia múltiple. TYPE para unir contenido usa ampersand &
+*/
