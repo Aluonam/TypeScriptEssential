@@ -116,4 +116,27 @@ const bobi: ServiceDog = {
     job: 'bomb-sniffing'
 }
 
+// INTERFACE MULTIPLE INHERITANCE
+// Herencia múltiple en interfaces
 
+interface Person2 {
+    name: string
+}
+
+interface Employee {
+    readonly id: number,
+    email: string
+}
+
+interface Engineer extends Person2, Employee{
+    level: string,
+    languages: string[]
+}
+
+const william: Engineer = {
+    name: 'William',
+    id: 28384340,
+    email: 'willi@gmail.com',
+    level: 'senior',
+    languages: ['JavaScript', 'TypeScript', 'React'],
+}
