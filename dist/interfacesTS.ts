@@ -54,3 +54,23 @@ const reservacion: Reservacion = {
     },
     nochesReservadas: 3
 }
+
+// Definir métodos en las interfaces:
+interface Product {
+    name: string;
+    price: number;
+    applyDiscount( discount: number ): number;
+}
+
+const shoes: Product = {
+    name: 'blue boots',
+    price: 50,
+    applyDiscount( amount: number ){
+        // return 5
+        const newPrice = this.price * (1 - amount);
+        this.price = newPrice;
+        return this.price;
+    },
+
+}
+console.log(shoes.applyDiscount(0.5))
