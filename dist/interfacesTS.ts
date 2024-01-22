@@ -1,4 +1,7 @@
-
+// INTERFACE
+// Describe la forma de los objetos y solo de los objetos
+// son muy parecidas a los alias tipo
+ 
 interface Huesped {
     idHuesped: string,
     nombre: string,
@@ -8,12 +11,12 @@ interface Huesped {
     telefono?: string
 }
 
-type Piso = 'primer piso' | 'segundo piso';
+type PisoOption = 'primer piso' | 'segundo piso';
 
 interface Cuarto {
     id: number,
     tipo: 'individual' | 'doble' | 'triple',
-    piso: Piso,
+    piso: PisoOption,
     precioNoche: number
 }
 
