@@ -59,7 +59,7 @@ const reservacion: Reservacion = {
 interface Product {
     name: string;
     price: number;
-    applyDiscount( discount: number ): number;
+    applyDiscount( discount: number ): number; // Especifica que recibe y devuelve el método
 }
 
 const shoes: Product = {
@@ -74,3 +74,25 @@ const shoes: Product = {
 
 }
 console.log(shoes.applyDiscount(0.5))
+
+
+// Ejemplo Interfaz con método: y para comprender diferencia entre TYPE e INTERFAZ
+// los types se reescriben, no se añaden como sí hacen las interfaces
+interface Dog {
+    name: string;
+    age: number;
+}
+
+interface Dog {  // Añades datos a la interfaz. INTERFAZ = AÑADE (extiende)
+    breed: string;
+    bark(): string; 
+}
+
+const Acrux: Dog = { // Dog será el total de los datos, no podemos poner solo unos pocos de todos los definidos
+    name: 'Acrux',
+    age: 7,
+    breed: 'mestizo',
+    bark(){      // como es un método debe darse el valor como un método
+        return 'GUAU GUAU!'
+    }
+}
