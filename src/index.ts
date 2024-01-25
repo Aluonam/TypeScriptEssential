@@ -1,5 +1,5 @@
 let mensaje:string;
-mensaje = "Hola ts";
+mensaje = 'Hola ts';
 console.log(mensaje)
 
 const prueba:number = 10;
@@ -8,7 +8,7 @@ const prueba:number = 10;
 // La inferencia de tipos es que no es necesario definiti el tipo de una variable a la hora de crearla
 // No siempre es necesario especificar el tipo de dato.
 
-let mensaje2 = "prueba";
+let mensaje2 = 'prueba';
 const  numero = 100;
 
 
@@ -72,12 +72,12 @@ let variable2: null = null;
 function lanzarError(mensajeError: string): never {
     throw new Error(mensajeError);
 }
-let saludo = saludar("¡hola!");
+let saludo = saludar('¡hola!');
 
 // VOID: la funcion no retorna ningun valor
 function saludar(mensaje:string ):void{
     console.log(mensaje);
 }
 
-let error = lanzarError("Ha sucedido un error")
+let error = lanzarError('Ha sucedido un error')
 
