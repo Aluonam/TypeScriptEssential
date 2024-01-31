@@ -65,3 +65,11 @@ function merge<T, U>(object1:T, object2:U){ // Por consenso se identifican como 
 merge({ name: 'colt' }, { pets:['blue', 'elton'] });
 console.log(merge({ name: 'colt' }, { pets:['blue', 'elton'] }))
 
+
+// Ejemplo con array vacio
+function makeEmptyArray<T = number>(): T[]{ // VALOR POR DEFECTO NUMBER
+    return []
+}
+const strings = makeEmptyArray(); // si paso por encima espera que sea number por defecto
+const bools = makeEmptyArray<boolean>(); // permite especificar el valor 
+//Así que este valor del tipo por defecto sólo entra en juego si no se especifica que tipo se espera.
