@@ -37,3 +37,20 @@ function identity<Type>(item: Type): Type {
 identity<number>(7)
 identity<string>('Hi')
 
+
+// uso más práctico
+function getRandomNumberElement(list: number[]){
+    // Devolveria solo número
+}
+function getRandomStringElement(list: string[]){
+    // Devolveria solo string
+}
+function getRandomElement(list: any[]){
+    // Devolveria cualquiera
+}
+// Pero todas estás al final se resumen en:
+function getRandomElementWithGeneric<T>(list:T[]): T{
+    const randomIndex = Math.floor(Math.random() * list.length);
+    return list[randomIndex]
+}
+
