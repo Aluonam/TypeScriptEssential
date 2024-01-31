@@ -54,3 +54,14 @@ function getRandomElementWithGeneric<T>(list:T[]): T{
     return list[randomIndex]
 }
 
+
+// otro ejemplo: con dos tipos de objetos
+function merge<T, U>(object1:T, object2:U){ // Por consenso se identifican como T U V...siguiendo el abecedario
+    return{
+        ...object1,
+        ...object2
+    }
+}
+merge({ name: 'colt' }, { pets:['blue', 'elton'] });
+console.log(merge({ name: 'colt' }, { pets:['blue', 'elton'] }))
+
