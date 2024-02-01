@@ -73,3 +73,25 @@ function makeEmptyArray<T = number>(): T[]{ // VALOR POR DEFECTO NUMBER
 const strings = makeEmptyArray(); // si paso por encima espera que sea number por defecto
 const bools = makeEmptyArray<boolean>(); // permite especificar el valor 
 //Así que este valor del tipo por defecto sólo entra en juego si no se especifica que tipo se espera.
+
+
+// otroe jemplo
+class PlayList<T> {
+    public queue: T[] = [];
+    add(el: T){
+        this.queue.push(el)
+    }
+}
+
+interface Song {
+    title: string;
+    artist: string;
+}
+
+interface Video {
+    title: string;
+    artist: string;
+}
+const songs = new PlayList<Song>()
+
+const videos = new PlayList<Video>()
