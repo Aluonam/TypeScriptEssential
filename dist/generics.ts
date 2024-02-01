@@ -9,3 +9,89 @@ Si me das un booleano, te devuelvo un booleano.
  
 const num: Array<number> = [] // Nos lo devolverá en forma de array de números.
 const colors: Array<string> = [] 
+
+function numberIdentity(item: number): number{
+    return item;
+}
+
+function stringIdentity(item: string): string{
+    return item;
+}
+
+function booleanIdentity(item: boolean): boolean{
+    return item;
+}
+
+// function identity(item: any): any{
+//     return item;
+// }
+
+function identity<Type>(item: Type): Type {
+    return item;
+}
+
+// function identity<T>(item: T): T {
+//     return item;
+// } // normalmente se usa la T
+
+identity<number>(7)
+identity<string>('Hi')
+
+
+// uso más práctico
+function getRandomNumberElement(list: number[]){
+    // Devolveria solo número
+}
+function getRandomStringElement(list: string[]){
+    // Devolveria solo string
+}
+function getRandomElement(list: any[]){
+    // Devolveria cualquiera
+}
+// Pero todas estás al final se resumen en:
+function getRandomElementWithGeneric<T>(list:T[]): T{
+    const randomIndex = Math.floor(Math.random() * list.length);
+    return list[randomIndex]
+}
+
+
+// otro ejemplo: con dos tipos de objetos
+function merge<T, U>(object1:T, object2:U){ // Por consenso se identifican como T U V...siguiendo el abecedario
+    return{
+        ...object1,
+        ...object2
+    }
+}
+merge({ name: 'colt' }, { pets:['blue', 'elton'] });
+console.log(merge({ name: 'colt' }, { pets:['blue', 'elton'] }))
+
+
+// Ejemplo con array vacio
+function makeEmptyArray<T = number>(): T[]{ // VALOR POR DEFECTO NUMBER
+    return []
+}
+const strings = makeEmptyArray(); // si paso por encima espera que sea number por defecto
+const bools = makeEmptyArray<boolean>(); // permite especificar el valor 
+//Así que este valor del tipo por defecto sólo entra en juego si no se especifica que tipo se espera.
+
+
+// otroe jemplo
+class PlayList<T> {
+    public queue: T[] = [];
+    add(el: T){
+        this.queue.push(el)
+    }
+}
+
+interface Song {
+    title: string;
+    artist: string;
+}
+
+interface Video {
+    title: string;
+    artist: string;
+}
+const songs = new PlayList<Song>()
+
+const videos = new PlayList<Video>()
