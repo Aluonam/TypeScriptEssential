@@ -12,8 +12,8 @@ function triple(value: number | string) {
 
 
 //----------------------------------------------------------------
-// Typeof Guards: comprueba el tipo de valor
-// ejemplo:
+// 1. Typeof Guards: guardia de tipo comprueba el tipo de valor
+// ejemplo: 
 function triple2(value: number | string){
     if(typeof value === 'string'){
         return value.repeat(3)
@@ -21,3 +21,21 @@ function triple2(value: number | string){
     return value * 3;
 }
 
+// 2. Truthiness Guards: guardia de veracidad
+// coacciona un ode los valores como verdadero o falso.
+const elem = document.getElementById('idk');
+if(elem){
+    elem    // HTMLelement
+} else {
+    elem    // null
+}
+
+const printLetters = (word?: string) =>{
+    if(word){
+        for (let character of word){
+            console.log(character)
+        }
+    } else {
+        console.log('no estás pasando una palabra') // no tiene el mismo nivel de certaza que el anterior tipo. Solo se comprueba si es true o false
+    }
+}
