@@ -39,3 +39,12 @@ const printLetters = (word?: string) =>{
         console.log('no estás pasando una palabra') // no tiene el mismo nivel de certaza que el anterior tipo. Solo se comprueba si es true o false
     }
 }
+
+
+// 3. Equality Narrowing
+function someDemo(x: string | number, y: string | boolean){
+    if(x === y){ // triple = para saber si son cadenas exactas " " === " "
+        x.toUpperCase()
+    }
+}
+someDemo(3, '3')
