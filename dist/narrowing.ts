@@ -48,3 +48,29 @@ function someDemo(x: string | number, y: string | boolean){
     }
 }
 someDemo(3, '3')
+
+
+// interface with if
+interface Movie {
+    title: string;
+    duration: number;
+}
+
+interface TVShow {
+    title: string;
+    numEpisodes: number;
+    durationEpisodes: number;
+}
+
+function getRunTime( media: Movie | TVShow){
+    if('numEpisodes' in media){
+        return media.numEpisodes * media.durationEpisodes
+    }
+    return media.duration
+}
+
+// para una pelicula cojo los datos de la interfaz Movie
+getRunTime({title: 'Mozart', duration: 90 })
+
+// para un show cojo los datos del TVShow:
+getRunTime({title: 'Bob Sponja', numEpisodes: 100, durationEpisodes: 20 })
