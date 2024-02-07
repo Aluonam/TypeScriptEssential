@@ -103,5 +103,17 @@ interface Pig{
 type FarmAnimal = Pig | Chicken | Cow;
 
 function getFarmAnimalSound(animal: FarmAnimal){
-    animal.__type
+    switch(animal.__type){
+        case('pig'): return 'oink oink';
+        case('cow'): return 'muuuuuuuu';
+        case('chicken'): return 'piopio';
+    }
+}
+
+// probamos a crear un animal:
+const margarita: Cow = {
+    name: 'Margarita',
+    weight: 400,
+    age: 12,
+    __type: 'cow' // es redundante porque ya das esta info al definitir  Cow pero por si acaso
 }
