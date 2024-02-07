@@ -107,6 +107,8 @@ function getFarmAnimalSound(animal: FarmAnimal){
         case('pig'): return 'oink oink';
         case('cow'): return 'muuuuuuuu';
         case('chicken'): return 'piopio';
+        default: 
+             const noDeberiaLlegarAqui: never = animal; // se asignaria el tipo nunca dará error porque no entra en ningun caso
     }
 }
 
