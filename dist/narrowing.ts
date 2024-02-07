@@ -74,3 +74,34 @@ getRunTime({title: 'Mozart', duration: 90 })
 
 // para un show cojo los datos del TVShow:
 getRunTime({title: 'Bob Sponja', numEpisodes: 100, durationEpisodes: 20 })
+
+
+// Discriminar uniones: CARACTERISTICA COMUN ENTRE LAS INTERFACES QUE VOY A COMPARAR
+// chicken cow y pig bien pdorian ser archivos diferentes 
+// cada una de las interfaces que queremos discriminar deben tener el TYPE como propiedad comun
+interface Chicken {
+    name: string;
+    weight: number;
+    age: number;
+    __type: 'chicken'; //typeName o kind son otros nombres comunes
+}
+
+interface Cow{
+    name: string;
+    weight: number;
+    age: number;
+    __type: 'cow'; //etiqeuta compartida en las interfaces q voy a comparar cada una con su valor especifico
+}
+
+interface Pig{
+    name: string;
+    weight: number;
+    age: number;
+    __type: 'pig';
+}
+
+type FarmAnimal = Pig | Chicken | Cow;
+
+function getFarmAnimalSound(animal: FarmAnimal){
+    animal.__type
+}
