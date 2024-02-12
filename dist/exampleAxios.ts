@@ -25,15 +25,22 @@ interface User {
     }
 }
 
-axios.get<User>('https://jsonplaceholder.typicode.com/users/1').then((response)=>{
-    console.log('yeahhh!');
-    const {data} = response;
-    data.name // El dato que quieras sacar en base al esquema del objeto en la interfaz
-}).catch((error)=>{
-    console.log('error', error)
-})
+axios
+    .get<User>('https://jsonplaceholder.typicode.com/users/1')
+    .then((response)=>{
+        console.log('yeahhh!');
+        // const {data} = response;
+        //data.name // El dato que quieras sacar en base al esquema del objeto en la interfaz si no lo llamas directamente en printUser como:
+        printUser(response.data)
+    }).catch((error)=>{
+        console.log('error', error)
+    })
 
-
+    function printUser( user: User ){
+        console.log(user.name)
+        console.log(user.email)
+        console.log(user.phone)
+    }
 
 // Referencias:
 // {
