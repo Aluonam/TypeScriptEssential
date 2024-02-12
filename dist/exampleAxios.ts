@@ -42,6 +42,19 @@ axios
         console.log(user.phone)
     }
 
+
+// Cambio la url de forma que me devuelva todos los usuarios y no solo uno:  https://jsonplaceholder.typicode.com/users
+// entonces debo modificar: 
+axios
+    .get<User []>('https://jsonplaceholder.typicode.com/users') // Además debes cambiar el tipo ahora es un ARRAY
+    .then((response)=>{
+        console.log('yeahhh!');
+        response.data.forEach(printUser);
+    }).catch((error)=>{
+        console.log('error', error)
+    })
+
+
 // Referencias:
 // {
 //     "id": 1,
