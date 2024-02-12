@@ -25,10 +25,10 @@ interface User {
     }
 }
 
-axios.get<boolean>('https://jsonplaceholder.typicode.com/users/1').then((response)=>{
+axios.get<User>('https://jsonplaceholder.typicode.com/users/1').then((response)=>{
     console.log('yeahhh!');
     const {data} = response;
-    data
+    data.name // El dato que quieras sacar en base al esquema del objeto en la interfaz
 }).catch((error)=>{
     console.log('error', error)
 })
