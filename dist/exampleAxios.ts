@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { NumericLiteral } from 'typescript';
+import  _ from 'lodash'; // tiene diferentes métodos se llaman con _.
+
 
 interface User {
     id: number
